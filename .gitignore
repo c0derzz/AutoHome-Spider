@@ -1,0 +1,17 @@
+__pycache__/
+*.iml
+*.csv
+.DS_Store
+.idea
+**/package-lock.json
+target/
+*.swp
+*.swo
+*.log
+logs/
+/target
+.project
+.vagrant
+.classpath
+.settings
+
