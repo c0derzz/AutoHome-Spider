@@ -14,9 +14,25 @@ def getHtml(url):
         return ""
     else:
         print("unallowable character:",url)
+
+'''
+遍历标签
+:param htm:html
+:param tag_type:标签类型
+'''
+def forEashTag(htm,tag_type):
+    if htm == None or htm == '':
+        return "htm 不能为空"
+    if htm == None or htm == '':
+        return "tag_type 不能为空"
+    soup = BeautifulSoup(htm, "html.parser")
+    tag_list = soup.find_all(tag_type)
+    for tag in tag_list:
+        print(tag)
+    return tag_list
+
 html = getHtml("http://www.baidu.com")
-print(html)
-soup = BeautifulSoup(html,"html.parser")
-a_list = soup.find_all('a')
-for a in a_list:
-    print(getHtml(a.get('href')))
+tags = forEashTag(html,'a')
+
+for tag in tags:
+    print(tag.attrs)
